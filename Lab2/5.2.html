@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="trafficLight">
+  <div id="red" class="light off"></div>
+  <div id="yellow" class="light off"></div>
+  <div id="green" class="light off"></div>
+</div>
+<button onclick="changeLight('green')">Зелений</button>
+<button onclick="changeLight('yellow')">Жовтий</button>
+<button onclick="changeLight('red')">Червоний</button>
+<script>
+function changeLight(color) {
+  var lights = document.getElementsByClassName("light");
+  for (var i = 0; i < lights.length; i++) {
+    lights[i].classList.remove("on");
+    lights[i].classList.add("off");
+  }
+  document.getElementById(color).classList.remove("off");
+  document.getElementById(color).classList.add("on");
+}
+</script>
+<style>
+.light {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+}
+
+.off {
+  background-color: gray;
+}
+
+#red.on {
+  background-color: red;
+}
+
+#yellow.on {
+  background-color: yellow;
+}
+
+#green.on {
+  background-color: green;
+}
+</style>
+</body>
+</html>
